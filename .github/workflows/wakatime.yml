@@ -1,0 +1,34 @@
+name: WakaTime Progress Update
+
+on:
+  # 每天夜间执行
+  schedule:
+    - cron: "0 0 * * *"
+  
+  # 允许手动触发
+  workflow_dispatch:
+  
+  # 在提交时触发（视需求可以注释掉）
+  push:
+    branches:
+      - main
+      - master
+
+jobs:
+  update-readme:
+    name: Update wakatime metrics in README
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v3
+      - uses: athul/waka-readme@master
+        with:
+          # 此处调用我们在 Secrets 中配置好的 API_KEY
+          WAKATIME_API_KEY: ${{ secrets.WAKATIME_API_KEY }}
+          SHOW_OS: "False"
+          SHOW_PROJECTS: "False"
+          SHOW_EDITORS: "False"
+          SHOW_TIMEZONE: "False"
+          LOCALE: "zh"
+          COMMIT_MESSAGE: "[Automated] Sync WakaTime status"
