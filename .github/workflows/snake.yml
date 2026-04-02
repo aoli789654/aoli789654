@@ -1,14 +1,9 @@
-name: Generate Dimensional Serpent (Snake)
+name: Generate Dimensional Serpent & Stats Metrics
 
 on:
-  # 每 24 小时运行一次
   schedule:
     - cron: "0 0 * * *"
-  
-  # 允许在 Actions 标签页手动运行
   workflow_dispatch:
-  
-  # 每次推送到主分支时运行
   push:
     branches:
       - main
@@ -22,7 +17,6 @@ jobs:
     timeout-minutes: 10
     
     steps:
-      # 生成蛇的 SVG 动画，配置魔法次元主题颜色
       - name: generate github-contribution-grid-snake.svg
         uses: Platane/snk/svg-only@v3
         with:
@@ -33,8 +27,16 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           
-      # 将生成的 SVG 文件推送到名为 "output" 的孤立分支，保持 main 分支干净
-      - name: push github-contribution-grid-snake.svg to the output branch
+      - name: Download Remote Stats to Local SVGs
+        run: |
+          mkdir -p dist
+          # Vercel 有时在国内被墙，但 GitHub 的美国服务器可以瞬间下载。我们将它们下载成文件保存！
+          curl -H "Cache-Control: no-cache" "https://github-readme-stats.vercel.app/api?username=${{ github.repository_owner }}&show_icons=true&title_color=8A2BE2&icon_color=8A2BE2&text_color=C8A2C8&bg_color=0D1117&hide_border=true&rank_icon=github" > dist/github-stats.svg
+          curl -H "Cache-Control: no-cache" "https://github-readme-streak-stats.herokuapp.com/?user=${{ github.repository_owner }}&theme=dark&background=0D1117&ring=8A2BE2&fire=8A2BE2&currStreakNum=C8A2C8&sideNums=C8A2C8&currStreakLabel=C8A2C8&sideLabels=C8A2C8&dates=C8A2C8&hide_border=true" > dist/github-streak.svg
+          curl -H "Cache-Control: no-cache" "https://github-readme-stats.vercel.app/api/pin/?username=${{ github.repository_owner }}&repo=bilibili-danmaku-analysis&title_color=8A2BE2&icon_color=8A2BE2&text_color=C8A2C8&bg_color=161B22&hide_border=true" > dist/artifact-1.svg
+          curl -H "Cache-Control: no-cache" "https://github-readme-stats.vercel.app/api/pin/?username=${{ github.repository_owner }}&repo=TimeArtifacts&title_color=8A2BE2&icon_color=8A2BE2&text_color=C8A2C8&bg_color=161B22&hide_border=true" > dist/artifact-2.svg
+
+      - name: push raw SVGs to the output branch
         uses: crazy-max/ghaction-github-pages@v3.1.0
         with:
           target_branch: output

@@ -28,8 +28,8 @@
 ### 🔮 迷宫第三层：综合战力分析 (Combat Analysis Data)
 
 <div align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=aoli789654&show_icons=true&title_color=8A2BE2&icon_color=8A2BE2&text_color=C8A2C8&bg_color=0D1117&hide_border=true&rank_icon=github" alt="GitHub Stats" width="48%" />
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=aoli789654&theme=dark&background=0D1117&ring=8A2BE2&fire=8A2BE2&currStreakNum=C8A2C8&sideNums=C8A2C8&currStreakLabel=C8A2C8&sideLabels=C8A2C8&dates=C8A2C8&hide_border=true" alt="GitHub Streak" width="48%" />
+  <img src="https://github.com/aoli789654/aoli789654/raw/output/github-stats.svg" alt="GitHub Stats" width="48%" />
+  <img src="https://github.com/aoli789654/aoli789654/raw/output/github-streak.svg" alt="GitHub Streak" width="48%" />
 </div>
 
 <div align="center">
@@ -42,18 +42,18 @@
 ### 🗡️ 迷宫最深处：出土的神器 (Pinned Artifacts)
 
 <div align="center">
-  <img src="https://github-readme-stats.vercel.app/api/pin/?username=aoli789654&repo=bilibili-danmaku-analysis&title_color=8A2BE2&icon_color=8A2BE2&text_color=C8A2C8&bg_color=161B22&hide_border=true" alt="Artifact 1" width="48%" />
-  <img src="https://github-readme-stats.vercel.app/api/pin/?username=aoli789654&repo=TimeArtifacts&title_color=8A2BE2&icon_color=8A2BE2&text_color=C8A2C8&bg_color=161B22&hide_border=true" alt="Artifact 2" width="48%" />
+  <img src="https://github.com/aoli789654/aoli789654/raw/output/artifact-1.svg" alt="Artifact 1" width="48%" />
+  <img src="https://github.com/aoli789654/aoli789654/raw/output/artifact-2.svg" alt="Artifact 2" width="48%" />
 </div>
 
 <br />
 
 <div align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/aoli789654/aoli789654/output/github-contribution-grid-snake-dark.svg">
-    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/aoli789654/aoli789654/output/github-contribution-grid-snake.svg">
+    <source media="(prefers-color-scheme: dark)" srcset="https://github.com/aoli789654/aoli789654/raw/output/github-contribution-grid-snake-dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset="https://github.com/aoli789654/aoli789654/raw/output/github-contribution-grid-snake.svg">
     <!-- fallback image for standard rendering -->
-    <img alt="github contribution grid snake animation" src="https://raw.githubusercontent.com/aoli789654/aoli789654/output/github-contribution-grid-snake.svg">
+    <img alt="github contribution grid snake animation" src="https://github.com/aoli789654/aoli789654/raw/output/github-contribution-grid-snake.svg">
   </picture>
 </div>
 <div align="center">
