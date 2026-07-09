@@ -70,7 +70,7 @@ AI 应用落地
 <!--START_SECTION:waka-->
 
 ```txt
-暂无统计数据
+No activity tracked
 ```
 
 <!--END_SECTION:waka-->
