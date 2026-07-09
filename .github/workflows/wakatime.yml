@@ -1,14 +1,14 @@
 name: WakaTime Progress Update
 
 on:
-  # 每天夜间执行
+  # Run once per day.
   schedule:
     - cron: "0 0 * * *"
   
-  # 允许手动触发
+  # Allow manual trigger.
   workflow_dispatch:
   
-  # 在提交时触发（视需求可以注释掉）
+  # Trigger on push. You can remove this block if you only want scheduled updates.
   push:
     branches:
       - main
@@ -24,7 +24,7 @@ jobs:
       - uses: actions/checkout@v3
       - uses: athul/waka-readme@master
         with:
-          # 此处调用我们在 Secrets 中配置好的 API_KEY
+          # This uses the API key configured in repository Secrets.
           WAKATIME_API_KEY: ${{ secrets.WAKATIME_API_KEY }}
           SHOW_OS: "False"
           SHOW_PROJECTS: "False"

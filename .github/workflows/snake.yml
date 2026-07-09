@@ -30,7 +30,7 @@ jobs:
       - name: Download Remote Stats to Local SVGs
         run: |
           mkdir -p dist
-          # Vercel 有时在国内被墙，但 GitHub 的美国服务器可以瞬间下载。我们将它们下载成文件保存！
+          # Download remote SVG cards and save them as static files in the output branch.
           curl -H "Cache-Control: no-cache" "https://github-readme-stats.vercel.app/api?username=${{ github.repository_owner }}&show_icons=true&title_color=8A2BE2&icon_color=8A2BE2&text_color=C8A2C8&bg_color=0D1117&hide_border=true&rank_icon=github" > dist/github-stats.svg
           curl -H "Cache-Control: no-cache" "https://github-readme-streak-stats.herokuapp.com/?user=${{ github.repository_owner }}&theme=dark&background=0D1117&ring=8A2BE2&fire=8A2BE2&currStreakNum=C8A2C8&sideNums=C8A2C8&currStreakLabel=C8A2C8&sideLabels=C8A2C8&dates=C8A2C8&hide_border=true" > dist/github-streak.svg
           curl -H "Cache-Control: no-cache" "https://github-readme-stats.vercel.app/api/pin/?username=${{ github.repository_owner }}&repo=bilibili-danmaku-analysis&title_color=8A2BE2&icon_color=8A2BE2&text_color=C8A2C8&bg_color=161B22&hide_border=true" > dist/artifact-1.svg
