@@ -1,6 +1,8 @@
 <div align="center">
 
-# 你好，我是 Aoli
+<img src="./assets/profile-banner.gif" width="100%" alt="梦华璃月动态横幅" />
+
+# 你好，我是梦华璃月
 
 **AI 应用学习者 / 后端开发探索者 / 正在积累项目经验**
 
@@ -91,4 +93,3 @@ No activity tracked
 保持学习，持续构建，把每一个小想法做成真正能用的工具。
 
 </div>
-
