@@ -1,34 +1,11 @@
 name: WakaTime Progress Update
 
 on:
-  # Run once per day.
-  schedule:
-    - cron: "0 0 * * *"
-  
-  # Allow manual trigger.
   workflow_dispatch:
-  
-  # Trigger on push. You can remove this block if you only want scheduled updates.
-  push:
-    branches:
-      - main
-      - master
 
 jobs:
-  update-readme:
-    name: Update wakatime metrics in README
+  disabled:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
     steps:
-      - uses: actions/checkout@v3
-      - uses: athul/waka-readme@master
-        with:
-          # This uses the API key configured in repository Secrets.
-          WAKATIME_API_KEY: ${{ secrets.WAKATIME_API_KEY }}
-          SHOW_OS: "False"
-          SHOW_PROJECTS: "False"
-          SHOW_EDITORS: "False"
-          SHOW_TIMEZONE: "False"
-          LOCALE: "zh"
-          COMMIT_MESSAGE: "[Automated] Sync WakaTime status"
+      - name: WakaTime update is disabled
+        run: echo "WakaTime README 自动更新已停用，避免覆盖中文主页内容。"
